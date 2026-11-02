@@ -3,6 +3,36 @@
 Exploratory data analysis and a Random Forest classifier that predicts diabetes status
 (non-diabetic / pre-diabetic / diabetic) from routine clinical and laboratory measurements.
 
+## The problem
+
+Pre-diabetes is often missed, even though the blood tests that could flag it (HbA1c, lipids,
+kidney markers, BMI) are already in most patients' records. The question is whether those
+routine results are enough to tell non-diabetic, pre-diabetic and diabetic patients apart.
+
+## Who it's for
+
+Health data analysts and clinical researchers who want to screen patient records for diabetes
+risk. It is also a worked example of an end-to-end classification project on imbalanced
+medical data.
+
+## What it does
+
+Cleans the dataset, explores how each measurement differs between classes and trains a tuned
+Random Forest that predicts diabetes status from 11 routine features.
+
+## Key results
+
+- **98% accuracy** on a held-out test set of 200 patients (1,000 records in total).
+- **F1 = 0.93** for non-diabetic, **0.99** for diabetic and **1.00** for pre-diabetic patients.
+- Found and fixed label errors in the raw data (`f` vs `F`, whitespace and lowercase values in the
+  target) that would otherwise have created false classes.
+- **Limitation:** 84% of patients are diabetic, and the pre-diabetic class has only 6 test
+  cases. The scores need confirming on a larger, balanced dataset before anyone relies on them.
+
+**Stack:** Python, pandas, scikit-learn (Random Forest, GridSearchCV), matplotlib, seaborn
+
+---
+
 ## Dataset
 
 **Diabetes Dataset** — Rashid, A. (2020), Mendeley Data, V1.
